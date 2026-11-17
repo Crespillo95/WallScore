@@ -1,25 +1,32 @@
 <!doctype html>
-<html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>WallScore · Guía de montaje</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#f6f5ed;color:#172820;font:16px/1.5 "Segoe UI",sans-serif}main{max-width:920px;margin:auto;padding:32px 5% 48px}header,nav,.tools{display:flex;gap:12px;align-items:center;justify-content:space-between}header{border-bottom:2px solid;padding-bottom:12px}.brand{font-weight:800;letter-spacing:-.05em;font-size:28px}button{border:1px solid currentColor;border-radius:5px;background:transparent;color:inherit;font:inherit;padding:7px 14px;cursor:pointer}h1{font:normal clamp(36px,7vw,64px)/1.03 Georgia,serif;letter-spacing:-.045em;margin:26px 0 8px}h2{font-size:19px;line-height:1.2;margin:20px 0 10px}p{margin:6px 0 18px}.settings{display:flex;gap:12px;flex-wrap:wrap}.settings label{flex:1;min-width:100px}input{font:inherit;background:#fffef8;border:1px solid #839488;border-radius:4px;width:100%;padding:4px 8px;color:inherit}.settings input{display:block}table{border-collapse:collapse;width:100%;table-layout:fixed}th,td{text-align:left;padding:5px 6px;border-bottom:1px solid #bec8bb;vertical-align:middle}th{font-size:.85em}th:first-child,td:first-child{padding-left:0}figure{margin:16px 0 0;background:#e4eada;border:1px solid #c1cbb8;padding:8px}svg{display:block;width:100%;max-height:240px}figcaption{font-size:.82em;color:#36483b;margin:0 6px}ol{padding-left:24px}li{padding-left:3px;margin:4px 0}.invalid{color:#84260d;font-weight:bold}.notes{font-size:.92rem}#marks td{font-variant-numeric:tabular-nums}.actions{display:flex;gap:8px}.primary{background:#263e2b;color:white;border-color:#263e2b}button:focus-visible,input:focus-visible{outline:3px solid #c16627}button:disabled{opacity:.45}
-@media(max-width:540px){main{padding:18px 4%}.actions{gap:4px}button{padding:4px 8px}td,th{padding:4px}.settings{gap:8px}.settings label{min-width:80px}h1{margin-top:18px}}
-@page{size:A4;margin:14mm}@media print{body{background:white;font-size:11pt}main{max-width:none;padding:0}.actions{display:none}h1{font-size:33pt;margin:12px 0 4px}h2{margin:12px 0 5px}input{appearance:textfield;border:0;padding:0;background:none}input::-webkit-inner-spin-button{display:none}figure{break-inside:avoid}svg{max-height:130px}p{margin:4px 0 8px}.notes,table{break-inside:avoid}}
-@media print{
-  @page{size:A4;margin:10mm 13mm}
-  body{font-size:10pt;line-height:1.3}
-  header{padding-bottom:5px}.brand{font-size:19pt}h1{font-size:26pt}
-  h2{font-size:13pt;margin:9px 0 3px}th,td{padding:2px 4px}
-  figure{margin:8px 0;padding:4px}svg{max-height:85px}
-  figcaption{font-size:8.5pt}.notes{font-size:9.5pt}
-  ol{margin:4px 0}li{margin:2px 0}#error:empty{display:none}
-}
-</style>
-<main><header><span class="brand">WallScore</span><div class="actions"><button id="language">English</button><button id="print" class="primary" data-t="print">Imprimir guía</button></div></header>
-<h1 data-t="title">Guía de montaje</h1><p data-t="intro">Centra tres cuadros en una pared con la misma separación entre sus bordes. Todas las medidas están en centímetros.</p>
-<section><h2 data-t="wall">Medidas de la pared</h2><div class="settings"><label><span data-t="widthWall">Ancho útil</span><input id="wall" type="number" min="0.1" step="any" value="240"></label><label><span data-t="center">Altura del centro común</span><input id="center" type="number" min="0.1" step="any" value="150"></label><label><span data-t="gap">Separación entre cuadros</span><input id="gap" type="number" min="0" step="any" value="8"></label></div>
-<h2 data-t="frames">Medidas de los cuadros</h2><table><thead><tr><th data-t="frame">Cuadro</th><th data-t="width">Ancho</th><th data-t="height">Alto</th><th data-t="inset">Borde superior al enganche</th></tr></thead><tbody id="inputs"></tbody></table></section>
-<p id="error" class="invalid" role="alert"></p><section id="result"><figure><svg id="diagram" role="img" aria-labelledby="caption" viewBox="0 0 600 178"></svg><figcaption id="caption" data-t="caption">Vista frontal. Las cruces indican los puntos de enganche. El dibujo es orientativo.</figcaption></figure>
-<h2 data-t="marks">Dónde marcar la pared</h2><table id="marks"><thead><tr><th data-t="frame">Cuadro</th><th data-t="fromLeft">Desde la izquierda</th><th data-t="aboveFloor">Sobre el suelo</th></tr></thead><tbody></tbody></table></section>
-<section class="notes"><h2 data-t="measure">Cómo trasladar las marcas</h2><ol><li data-t="one">Mide la parte exterior de cada marco y la distancia desde el borde superior hasta su enganche central. Si lleva cable, mídelo tensado en el punto de apoyo.</li><li data-t="two">Marca el límite izquierdo del tramo de pared que has medido. Desde ese mismo origen mide la posición horizontal de cada cruz. Mide la altura desde el suelo.</li><li data-t="three">Presenta los tres cuadros con cinta de pintor y una cinta métrica. La cruz corresponde al punto de apoyo del marco. Comprueba el desplazamiento entre el apoyo y el tornillo del herraje antes de perforar.</li></ol><p data-t="limit">La guía calcula un enganche centrado por cuadro. Los marcos con dos anillas o con un enganche descentrado requieren sus propias medidas.</p></section></main>
-<script src="../Assets/Scripts/FrameLayout.js"></script><script src="guide.js"></script></html>
+:root{color-scheme:light;--ink:#20362b;--paper:#f7f6ef;--line:#b8c4b6;--accent:#a23f23}
+*{box-sizing:border-box}[hidden]{display:none!important}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.45 "Segoe UI",sans-serif}
+main{max-width:1020px;margin:auto;padding:24px clamp(12px,4vw,46px) 48px}header,.actions,.files{display:flex;gap:8px;align-items:center;flex-wrap:wrap}header{justify-content:space-between;border-bottom:2px solid;padding-bottom:12px}.brand{font-size:26px;font-weight:750;letter-spacing:-.06em}
+button,input,select{font:inherit;color:inherit;border:1px solid #819181;border-radius:5px;background:#fffef8;padding:7px 9px}input,select{width:100%;min-width:0}button{cursor:pointer}.primary{background:#294635;color:white}button:disabled{opacity:.5;cursor:default}:focus-visible{outline:3px solid #ad532c;outline-offset:2px}
+h1{font:normal clamp(38px,6vw,68px)/1.04 Georgia,serif;letter-spacing:-.05em;margin:24px 0 8px}h2{font-size:20px;margin:22px 0 10px}p{margin:6px 0 14px}
+.settings,.cards,.pair{display:grid;gap:12px}.settings{grid-template-columns:repeat(4,1fr)}.cards{grid-template-columns:repeat(3,minmax(0,1fr))}.pair{grid-template-columns:1fr 1fr;gap:8px}label{display:block;font-size:.9em}label>span{display:block;margin:3px 0}fieldset{min-width:0;margin:0;border:1px solid var(--line);border-radius:7px;padding:10px 12px 14px}legend{font-weight:700;padding:0 5px}.card select{margin-bottom:5px}.hardware{margin-top:9px}.hint,figcaption,.notes{font-size:.91rem}.files{margin:14px 0}.message{color:#80321a;font-weight:600}.message:empty{display:none}
+figure{margin:12px 0;background:#e6ecde;border:1px solid var(--line);padding:8px 12px}svg{width:100%;max-height:215px;display:block}table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}th,td{text-align:left;border-bottom:1px solid var(--line);padding:5px 8px}th{font-size:.88em}ol{padding-left:22px}.printonly{display:none}
+@media(max-width:700px){.cards{grid-template-columns:1fr}.settings{grid-template-columns:repeat(2,minmax(0,1fr))}.card .pair{gap:12px}.brand{font-size:23px}}
+@page{size:A4;margin:13mm}@media print{body{background:white;font-size:10pt}main{padding:0}.actions,.edit,.files,#fileMessage{display:none}.printonly{display:block}header{padding:0 0 3px}.brand{font-size:16pt}h1{font-size:28pt;margin:10px 0 4px}h2{font-size:13pt;margin:12px 0 4px}figure{margin:6px 0}svg{max-height:145px}th,td{padding:3px}table,figure{break-inside:avoid}.notes,figcaption{font-size:9pt}.notes p,ol{margin:4px 0}}
+</style></head><body><main>
+<header><span class="brand">WallScore</span><div class="actions"><button id="language">English</button><button id="print" class="primary" data-t="print">Imprimir plano</button></div></header>
+<h1 data-t="title">Guía de montaje</h1><p data-t="intro">Centra tres cuadros con separaciones iguales y calcula dónde apoyar cada uno. Introduce las medidas en centímetros.</p>
+<section class="edit"><h2 data-t="wall">Pared</h2><div class="settings">
+<label><span data-t="wallWidth">Ancho útil</span><input id="wall" type="number" step="any" value="240"></label>
+<label><span data-t="center">Altura del centro</span><input id="center" type="number" step="any" value="150"></label>
+<label><span data-t="gap">Separación</span><input id="gap" type="number" step="any" value="8"></label>
+<label><span data-t="ceiling">Altura libre (opcional)</span><input id="ceiling" type="number" step="any"></label></div>
+<h2 data-t="frames">Cuadros y herrajes</h2><p class="hint" data-t="front">Toma las distancias horizontales desde el borde que queda a la izquierda al mirar el cuadro de frente. Si le das la vuelta como una página, ese borde queda a tu derecha.</p>
+<div class="cards" id="inputs"></div>
+<div class="files"><button id="save" data-t="save">Guardar plano</button><button id="open" data-t="open">Abrir plano</button><input id="file" type="file" accept=".json,application/json" hidden></div><p class="message" id="fileMessage" role="status"></p>
+</section>
+<p id="error" class="message" role="alert"></p>
+<section id="result"><h2 data-t="marks">Dónde marcar la pared</h2><p id="summary"></p><p id="dimensions" class="printonly"></p>
+<figure><svg id="diagram" viewBox="0 0 600 170" role="img" aria-labelledby="caption"></svg><figcaption id="caption" data-t="caption">Vista frontal. Cada cruz indica un apoyo. El esquema es orientativo.</figcaption></figure>
+<table id="marks"><thead><tr><th data-t="point">Apoyo</th><th data-t="fromLeft">Desde el límite izquierdo</th><th data-t="aboveFloor">Desde el suelo</th></tr></thead><tbody></tbody></table>
+<section class="notes"><h2 data-t="measure">Traslado a la pared</h2><ol><li data-t="one">Si el cuadro lleva cable, mide desde el borde superior al cable tensado en su punto de apoyo.</li><li data-t="two">Marca un único origen a la izquierda y usa la misma referencia de suelo nivelada para todas las alturas. Presenta los cuadros con cinta de pintor y comprueba las distancias.</li><li data-t="three">Cada cruz corresponde al apoyo del cuadro en el herraje. Mide la distancia del apoyo al tornillo de tu herraje antes de trasladar el punto de perforación.</li></ol></section></section>
+</main><script src="../Assets/Scripts/FrameLayout.js"></script><script src="guide.js"></script></body></html>

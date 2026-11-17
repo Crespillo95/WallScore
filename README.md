@@ -1,10 +1,14 @@
 # WallScore
 
-A mounting guide for three frames with different dimensions. WallScore centres the row between two wall edges, aligns the centres vertically and calculates a separate hook location for each frame.
+A mounting guide for three frames with different dimensions. WallScore centres the group between two wall edges and gives floor and wall-edge coordinates for up to six supports.
 
 ## Use the mounting guide
 
-Open [the interactive guide](guide/index.html) from a local checkout in a browser, or download the example sheet in [English](guide/WallScore-EN.pdf) or [Spanish](guide/WallScore-ES.pdf). Enter the wall width, the desired centre height above the floor and the edge-to-edge spacing. For each picture, enter the exterior frame measurements and the distance down from the frame top to its central hanger. The guide shows a front elevation, lists the coordinates and prints the current arrangement.
+Download [the single-file planner](guide/WallScore.html) and open it in a browser. All calculations, file operations and printing work offline. Example sheets are available in [English](guide/WallScore-EN.pdf) and [Spanish](guide/WallScore-ES.pdf).
+
+Enter the wall width, centre height and gap. Add a clear height to check the top of each frame. For each frame, choose a centred hanger, an off-centre hanger or two supports. Measure offsets from the top and the **front-view left edge** of the frame. The two supports can sit at different heights. The table measures every support from the same wall edge and floor datum.
+
+**Save plan** downloads an editable JSON file and **Open plan** restores its measurements. **Print plan** produces a sheet with the outlines, support coordinates and side margins. In the Windows planner, **Exportar plano interactivo** saves an offline HTML copy with the current measurements ready to edit.
 
 The included example fits a 240 cm wall at a shared centre height of 150 cm. With an 8 cm gap the marks, measured from the left edge and floor respectively, are A (80, 166), B (123, 162) and C (163, 163) cm. These coordinates refer to the support point of the hanger. Check the fixing hardware and confirm the layout at the wall.
 
@@ -12,9 +16,13 @@ The included example fits a 240 cm wall at a shared centre height of 150 cm. Wit
 
 Open `WallScore.esproj` in Lens Studio 5.25.0. It contains the official blank SPECS scene and the four starter packages. The source tree also includes the three original scale frame meshes, the hanger cross, a layout calculator and the interaction controller. The scene still needs to be assembled through CLAD and the Lens Studio MCP. The [design brief](devpost/design-brief.md) specifies the native interactions and preview checks, and the [recording script](devpost/demo-script.md) covers the planned video. The printable guide works now.
 
+The controller supports two additional configurations for scene assembly. Enable **Mixed Hardware** for the sample with two rings on B and an offset hanger on C. Or paste a saved guide JSON into **Plan Json** to use its dimensions, hardware and spacing. Place the anchor at the wall midpoint, 150 cm above the floor reference. The controller scales the frame outlines and moves the centre line to the saved height. Select a frame in mark view, then pinch its selected cross to cycle through its supports.
+
 ## Check the geometry
 
 Run `node --test guide/layout.test.cjs guide/controller.test.cjs` from the repository root. The controller tests exercise button events with stand-in scene objects. Native rendering, input, tracking and placement must be verified separately in Lens Studio Interactive Preview.
+
+Rebuild the single-file planner with `node tools/build-guide.cjs`. With Playwright available, run `node guide/browser-check.cjs` for offline browser checks. Set `CHROME_BIN` to use an installed Chromium browser. The Windows build command is `.\portable\build.ps1 -OutputDirectory .\dist`.
 
 ## Project credits
 

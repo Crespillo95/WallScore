@@ -16,7 +16,7 @@ The outlines stay on the wall as the installer steps sideways. With the composit
 
 ## Product or overlay
 
-A spatial overlay for a flat wall. Interactive Preview uses a fixed, labelled sample wall. It supplies a known origin and dimensions without claiming to detect a real wall. One centrally located hanger per frame.
+A spatial overlay for a flat wall. The planned preview uses a fixed, labelled sample wall with a known origin and dimensions. The default recording layout uses one central hanger per frame.
 
 ## Where things live
 
@@ -42,7 +42,11 @@ The wall begins in layout mode. Show the gap readout beside the centre line. Whi
 
 ## Out of scope
 
-Automatic registration of a real wall, persistent anchors across sessions, fastening advice by wall material, dual hooks and off-centre hardware. A bilingual printable companion accepts independently measured frame and wall dimensions.
+Automatic registration of a real wall, persistent anchors across sessions and fastening advice by wall material.
+
+## Additional mounting configurations
+
+The bilingual companion accepts centred, off-centre and dual supports, with a separate top offset for each. It saves editable plans and prints the marks. The controller accepts the saved JSON through its Inspector input and preserves the measured spacing. Its mixed-hardware preset uses two supports on B at (108, 162) and (138, 161) cm, and one on C at (159, 163) cm. The second pinch on a selected two-support frame cycles between support points. These configurations have local geometry and controller tests. Editor assembly and on-device evaluation are pending.
 
 ## Risks and open questions
 
