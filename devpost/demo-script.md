@@ -12,3 +12,5 @@ Target running time: 75 seconds. Capture the actual SPECS Interactive Preview in
 | 67–75 s | Briefly show the printable mounting guide, then end on the native wall. | “This demo uses a simulated wall. At the real wall, check the measurements with a tape before fixing the hooks.” |
 
 Before publishing, update the narration to match the recorded interaction and visible labels. Public YouTube caption and link only after review of the final render.
+
+The edited [eight-second closing shot](mounting-guide-outro.mp4) uses the actual English mounting sheet. It is ready to append after the native preview recording.
